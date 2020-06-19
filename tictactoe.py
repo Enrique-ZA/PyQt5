@@ -35,7 +35,7 @@ s_width, s_height = screen_resolution.width(), screen_resolution.height()
 window = QWidget() # declare main window
 
 # Start application in center of the users screen:
-window.setGeometry((s_width/2)-(width/2), (s_height/2)-(height/2), width, height)
+window.setGeometry(int((s_width/2)-(width/2)), int((s_height/2)-(height/2)), width, height)
 
 window.setWindowTitle("Tic Tac Toe") # main window title
 
@@ -236,8 +236,8 @@ class Button:
             self.button.clicked.connect(self.player_move) # link click event to function
         else:
             self.button.clicked.connect(show_result) # link click event to function
-        self.button.resize(self.button.btn_width,self.button.btn_height) # set button size
-        self.button.move(self.x, self.y) # position button to center of main window
+        self.button.resize(int(self.button.btn_width),int(self.button.btn_height)) # set button size
+        self.button.move(int(self.x), int(self.y)) # position button to center of main window
         self.button.show()
 
     def player_move(self):
